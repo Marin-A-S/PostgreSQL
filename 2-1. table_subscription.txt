@@ -1,0 +1,9 @@
+-- Таблица подписки
+CREATE TABLE subscription (
+	id SERIAL PRIMARY KEY,
+	from_user_id INT NOT NULL,
+	to_user_id INT,
+	to_community_id INT,
+	CHECK (to_user_id > 0 OR to_community_id > 0),
+	created TIMESTAMP
+);
